@@ -1,0 +1,62 @@
+.theme_2{
+    background-color:#fefefe
+}
+
+.hero{
+    position: relative;
+    z-index:0
+}
+
+.hero--large{
+    padding:12em 0 14em
+}
+
+.text-center{
+    text-align:center;
+}
+
+.row{
+    max-width:75rem;
+    margin-right:auto;
+    margin-left:auto;
+}
+.small-12{
+    width:100%
+}
+
+.hero .heading, .hero .kicker, .hero .product--cardsHome p, .hero p, .product--cardsHome .hero p{
+    color:#fefefe;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.heading--basic{
+    margin:.25rem 0
+}
+
+.column, .columns{
+    float: left;
+}
+
+@media print, screen and (min-width: 64em){
+    .hero--large{
+        padding:14em 0 16em;
+    }
+
+    .large-9{
+        width: 75%
+    }
+
+    h1{
+        font-size:3.8125rem
+    }
+
+    .medium-12{
+        width:100%
+    }
+
+    .column, .columns{
+        padding-right:.9375rem;
+        padding-left:.9375rem;
+    }
+}

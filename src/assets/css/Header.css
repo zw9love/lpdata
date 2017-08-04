@@ -1,0 +1,55 @@
+.container {
+    width: 100%;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    height:70px;
+}
+
+.wrapper {
+    max-width: 1200px;
+    height: 70px;
+    margin: 0 auto;
+    /*background-color: yellow;*/
+}
+
+.logoWrapper {
+    float: left;
+}
+
+.logoWrapper img {
+    width:auto;
+    height:70px;
+}
+
+.menuWrapper{
+    float: right;
+}
+
+.menuWrapper ul li{
+    float: left;
+    padding:0 20px;
+    height:70px;
+    line-height:70px;
+    color:#0a0a0a;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.btnWrapper{
+    height:70px;
+}
+
+.btnWrapper span{
+    display: inline-block;
+    paddding:10px 0;
+    border:2px solid #fc6215;
+    height:40px;
+    vertical-align: middle;
+    line-height:40px;
+    width:120px;
+    text-align: center;
+    font-weight:bold;
+}
