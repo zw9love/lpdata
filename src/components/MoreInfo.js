@@ -25,8 +25,8 @@ export default class MoreInfo extends Component{
                 <span style={this.props.fontStyle}>
                     {this.props.info || this.state.info}
                     <span className={cx('bottomLine',this.props.classLine)} />
+                    <img src={require('../assets/img/arrow.svg')} alt="" className={cx('arrowImage',this.props.classArrow)}/>
                 </span>
-                <img src={require('../assets/img/arrow.svg')} alt="" className={cx('arrowImage',this.props.classArrow)}/>
             </div>
         )
     }

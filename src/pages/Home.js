@@ -7,6 +7,7 @@ import cs from 'classnames/bind'
 import Header from '../components/Header'
 import MoreInfo from '../components/MoreInfo'
 import ThreeLevelBtn from '../components/ThreeLevelBtn'
+import AdverCell from '../components/AdverCell'
 
 
 let cx = cs.bind(styles)
@@ -95,18 +96,7 @@ export default class Home extends Component {
                             </li>
                         </ul>
                     </div>
-                    <div className={cx('protectContainer')}>
-                        <div className={cx('protectLeft')}>
-                            <div className={cx('protectLeftCenter')}>
-                                <h1>Protect your organization from Petya / NotPetya Ransomware outbreak</h1>
-                                <MoreInfo info="Stop Petya / NotPetya Ransomware" fontStyle={{color:'#000'}} cellStyle={{position:'relative',textAlign:'right',marginRight:'20px'}}/>
-                            </div>
-                        </div>
-                        <div className={cx('protectRight')}>
-                            <img src={require('../assets/img/protect.jpg')} alt="" className={cx('protectImage')}/>
-                            <div className={cx('protectShadow')}></div>
-                        </div>
-                    </div>
+                    <AdverCell />
                     <div className={cx('defenseTitle')}>
                         <h1>Explore Cb Defense</h1>
                         <p>Powerful next-generation antivirus and
@@ -160,6 +150,12 @@ export default class Home extends Component {
                             <path d="M0 0 L50 100 L100 0 Z"></path>
                         </svg>
                     </div>
+                </div>
+                <div className={cx('adverContainer')}>
+                    <AdverCell reverse={true}/>
+                    <AdverCell reverse={false}/>
+                    <AdverCell reverse={true}/>
+                    <AdverCell reverse={false}/>
                 </div>
             </div>
         )
