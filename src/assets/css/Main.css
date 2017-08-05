@@ -1,11 +1,3 @@
-html,body {
-    box-sizing: border-box;
-    -ms-text-size-adjust: 100%;
-    -webkit-text-size-adjust: 100%;
-    overflow-x: hidden;
-    overflow-y: auto;
-}
-
 *, *:before, *:after {
     /*box-sizing: inherit;*/
     margin:0;
@@ -14,15 +6,17 @@ html,body {
     box-sizing: border-box;
 }
 
-body {
-    margin: 0;
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+html,body {
+    /*box-sizing: border-box;*/
+    /*-ms-text-size-adjust: 100%;*/
+    /*-webkit-text-size-adjust: 100%;*/
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
-h1, h2, h3, h4, h5, h6, p, ul {
+body {
     margin: 0;
-    padding: 0;
-    /*background: yellow;*/
+    font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
 }
 
 a{

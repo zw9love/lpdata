@@ -1,34 +1,44 @@
-.moreInfoCell{
+.moreInfoCell {
     position: absolute;
-    left:25px;
-    bottom:20px;
+    left: 25px;
+    bottom: 20px;
     padding-bottom: 10px;
+    cursor: pointer;
 }
 
-.moreInfoCell > span{
+.moreInfoCell:hover .arrowImage {
+    right: -30px;
+}
+
+.moreInfoCell:hover .bottomLine {
+    bottom: -13px;
+}
+
+.moreInfoCell > span {
     display: inline-block;
     vertical-align: middle;
-    margin-right: 10px;
     color: #fff;
     font-weight: 600;
     font-size: 14px;
-    transition:all 500ms ease;
     position: relative;
 }
 
-.bottomLine{
+.bottomLine {
     position: absolute;
-    width:100%;
-    left:0;
-    bottom:-10px;
-    height:2px;
+    width: 100%;
+    left: 0;
+    bottom: -10px;
+    height: 2px;
     background: #fc6215;
-    transition:all 500ms ease;
+    transition: all 300ms ease;
 }
 
-.arrowImage{
-    display: inline-block;
-    width:18px;
-    height:10px;
+.arrowImage {
+    position: absolute;
+    width: 18px;
+    height: 10px;
     vertical-align: middle;
+    right: -23px;
+    top:3px;
+    transition: all 300ms ease;
 }

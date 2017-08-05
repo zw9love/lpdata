@@ -21,12 +21,12 @@ export default class MoreInfo extends Component{
 
     render(){
         return(
-            <div className={cx('moreInfoCell',this.props.classCell)}>
-                <span>
+            <div className={cx('moreInfoCell')} style={this.props.cellStyle}>
+                <span style={this.props.fontStyle}>
                     {this.props.info || this.state.info}
                     <span className={cx('bottomLine',this.props.classLine)} />
                 </span>
-                <img src={require('../assets/img/arrow.svg')} alt="" className={cx('arrowImage')}/>
+                <img src={require('../assets/img/arrow.svg')} alt="" className={cx('arrowImage',this.props.classArrow)}/>
             </div>
         )
     }
