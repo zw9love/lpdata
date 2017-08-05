@@ -5,7 +5,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Home from './pages/Home';
-import './assets/css/main.css';//使用require导入css文件
+import './assets/css/Main.css';//使用require导入css文件
 // import {Router, Route, IndexRoute, hashHistory, browserHistory} from 'react-router'
 import {HashRouter,BrowserRouter,Route } from 'react-router-dom'
 import {Provider} from 'react-redux'

@@ -6,7 +6,15 @@
     left: 0;
     z-index: 100;
     height:70px;
+    color: #0a0a0a;
+    transition: all 300ms ease;
 }
+
+.containerTop{
+    color: #fff;
+    background-color: transparent;
+}
+
 
 .wrapper {
     max-width: 1200px;
@@ -22,10 +30,12 @@
 .logoWrapper img {
     width:auto;
     height:70px;
+    cursor: pointer;
 }
 
 .menuWrapper{
     float: right;
+    overflow: hidden;
 }
 
 .menuWrapper ul li{
@@ -33,23 +43,92 @@
     padding:0 20px;
     height:70px;
     line-height:70px;
-    color:#0a0a0a;
+    /*color:#0a0a0a;*/
     font-size: 15px;
     cursor: pointer;
+    position: relative;
+    font-weight: 600;
+}
+
+.searchImage{
+    width:13px;
+    height:13px;
+    vertical-align: middle;
+    z-index: 1;
+    position: relative;
+}
+
+.menuWrapper ul li .menuFontCell{
+    position: relative;
+    z-index: 1;
+    transition:all 300ms ease;
+}
+
+.menuWrapper ul li .menuHoverCell{
+    position: absolute;
+    left:50%;
+    bottom:-100%;
+    width:100%;
+    height:100%;
+    /*border:3px solid #fc6215;*/
+    background-color: #fc6215;
+    transition: all 300ms ease;
+    z-index: 0;
+    transform: translateX(-50%);
+}
+
+.menuWrapper ul li:hover .menuHoverCell{
+    bottom:0;
+}
+
+.menuWrapper ul li:hover .menuFontCell{
+    color:#fff;
 }
 
 .btnWrapper{
     height:70px;
 }
 
-.btnWrapper span{
+.btnWrapper>span{
     display: inline-block;
     paddding:10px 0;
-    border:2px solid #fc6215;
+    border:3px solid #fc6215;
     height:40px;
     vertical-align: middle;
     line-height:40px;
     width:120px;
     text-align: center;
     font-weight:bold;
+    position: relative;
+    overflow: hidden;
+    /*box-sizing: content-box;*/
 }
+
+.btnFontWrapper{
+    position: relative;
+    z-index: 1;
+    transition: all 300ms ease;
+    font-size:15px;
+}
+
+.btnHoverWrapper{
+    position: absolute;
+    left:50%;
+    bottom:-100%;
+    width:200%;
+    height:100%;
+    /*border:3px solid #fc6215;*/
+    background-color: #fc6215;
+    transition: all 300ms ease;
+    z-index: 0;
+    transform: translateX(-50%);
+}
+
+.btnWrapper>span:hover .btnHoverWrapper{
+    bottom:0px
+}
+
+.btnWrapper>span:hover .btnFontWrapper{
+    color:#fff
+}
+

@@ -1,12 +1,13 @@
-html {
+html,body {
     box-sizing: border-box;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 *, *:before, *:after {
     /*box-sizing: inherit;*/
-    transform: scale(1,1);
     margin:0;
     padding:0;
     list-style:none;

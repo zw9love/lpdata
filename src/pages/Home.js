@@ -3,59 +3,85 @@
  */
 import React, {Component} from 'react';
 import styles from '../assets/css/Home.css'
+import cs from 'classnames/bind'
 import Header from '../components/Header'
+import MoreInfo from '../components/MoreInfo'
+
+
+let cx = cs.bind(styles)
+
 
 export default class Home extends Component {
 
     constructor(props) {
         super(props)
         this.state = {
-            data: []
+            data: [],
+            borderWidth:'0px'
         }
     }
 
 
     componentDidMount(){
         // this.context.router.history.push("/otherPath")
+        let width;
+        let clientHeight = window.innerHeight
+        let docHeight = document.body.scrollHeight || document.documentElement.scrollHeight
+        if(docHeight > clientHeight){
+            // 滚动轴出现了
+            width = ( window.innerWidth  - 17 ) / 2 + 1
+        }else{
+            // 没有滚动轴
+            width = window.innerWidth / 2 + 1
+        }
+        this.setState({borderWidth:width})
     }
 
     render(){
+        let borderWidth = this.state.borderWidth
         return (
-           <main>
+            <div>
                <Header />
-               <section style={{backgroundImage: `url(${require('../assets/img/header_bg.jpg')})`,backgroundSize:'cover'}} className={`${styles.theme_2} ${styles.hero} ${styles['hero--large']} ${styles['section-square-separator']}`}>
-
-                   {/*<div className="row">*/}
-                       {/*<div className={`${styles['columns']} ${styles['small-12']} ${styles['small-centered']} ${styles['text-center']}`}>*/}
-
-
-                           {/*<h1 id="theTarget" className={`${styles['heading']} ${styles['large-9']} ${styles['medium-10']} ${styles['heading--basic']}`}>Stop the Most Attacks</h1>*/}
-
-                           {/*<p className={`${styles['medium-8 ']} ${styles['large-6']} ${styles['text-center']}`}>Most Proven Next-Generation Endpoint Security</p>*/}
-                       {/*</div>*/}
-                   {/*</div>*/}
-
-                   {/*<div className={`${styles['row']} ${styles['header-static-layer']} ${styles['padding-bottom-medium--large']}`}>*/}
-                       {/*<div className={`${styles['columns']} ${styles['medium-12']}`}>*/}
-                           {/*<ul className={`${styles['buttons-row']} ${styles['hero-buttons']} ${styles['buttons-row--one']}`}>*/}
-                               {/*<li>*/}
-                                   {/*<a href="javascript:;" className={`${styles['button']} ${styles['button-primary']}`}>*/}
-                                       {/*Learn More*/}
-                                   {/*</a>*/}
-                               {/*</li>*/}
-                           {/*</ul>*/}
-                       {/*</div>*/}
-                   {/*</div>*/}
-
-
-                   {/*<div className={`${styles['triangle-overlay']} ${styles['theme_2']}`}>*/}
-                       {/*<svg viewBox="0 0 1280 125" xmlns="http://www.w3.org/2000/svg">*/}
-                           {/*<path d="M0 142h1280V0L640 112 0 0"></path>*/}
-                       {/*</svg>*/}
-                   {/*</div>*/}
-
-               </section>
-           </main>
+               <div style={{backgroundImage: `url(${require('../assets/img/header_bg.jpg')})`,backgroundSize:'cover'}} className={cx('container')}>
+                    <div className={cx('wrapper')}>
+                        <h1>Stop the Most Attacks</h1>
+                        <p>Most Proven Next-Generation Endpoint Security</p>
+                    </div>
+                    <div className={cx('triangle')} style={{borderLeftWidth:borderWidth,borderRightWidth:borderWidth}}></div>
+               </div>
+                <div className={cx('safeIntroContainer')}>
+                    <p>Carbon Black Products</p>
+                    <h1>Broadest Security Coverage</h1>
+                </div>
+                <div className={cx('safeCellContainer')}>
+                    <ul>
+                        <li>
+                            <img src={require('../assets/img/safe1.png')} alt="" className={cx('bgImage')}/>
+                            <div className={cx('safeCellFontWrapper')}>
+                                <p>Cb Defense</p>
+                                <h1>Next-Generation Antivirus + EDR</h1>
+                                <MoreInfo classCell={cx('moreInfoCell')} classLine={cx('bottomLine')}/>
+                            </div>
+                        </li>
+                        <li>
+                            <img src={require('../assets/img/safe1.png')} alt="" className={cx('bgImage')}/>
+                            <div className={cx('safeCellFontWrapper')}>
+                                <p>Cb Defense</p>
+                                <h1>Next-Generation Antivirus + EDR</h1>
+                                <MoreInfo classCell={cx('moreInfoCell')} classLine={cx('bottomLine')}/>
+                            </div>
+                        </li>
+                        <li>
+                            <img src={require('../assets/img/safe1.png')} alt="" className={cx('bgImage')}/>
+                            <div className={cx('safeCellFontWrapper')}>
+                                <p>Cb Defense</p>
+                                <h1>Next-Generation Antivirus + EDR</h1>
+                                <MoreInfo classCell={cx('moreInfoCell')} classLine={cx('bottomLine')}/>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         )
     }
 }
