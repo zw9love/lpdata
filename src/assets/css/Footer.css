@@ -1,0 +1,109 @@
+.footerContainer {
+    width: 100%;
+    background-color: #000;
+    overflow: hidden;
+}
+
+.footerWrapper {
+    max-width: 1200px;
+    margin: 30px auto 50px auto;
+    color: #fff;
+}
+
+.footerWrapper .footerTopWrapper:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.footerWrapper .footerTopWrapper {
+    margin-bottom: 50px;
+    height:30px;
+    line-height: 30px;
+}
+
+.footerWrapper .footerTopWrapper div:first-child{
+    float: left;
+}
+
+.footerWrapper .footerTopWrapper div:first-child svg {
+    width: 170px;
+    height: 20px;
+}
+
+.footerWrapper .footerTopWrapper div:first-child svg path {
+    fill: #fff
+}
+
+.footerWrapper .footerTopWrapper div:last-child{
+    float: right;
+}
+
+.footerWrapper .footerTopWrapper div:last-child svg{
+    width:20px;
+    height:16px;
+    display: inline-block;
+    margin-left:15px;
+    cursor: pointer;
+    transition: all 200ms ease;
+}
+
+.footerWrapper .footerTopWrapper div:last-child svg:hover path{
+    fill: #666;
+}
+
+.footerMainWrapper > ul {
+    display: flex;
+}
+
+.footerMainWrapper > ul > li:not(:last-child) {
+    flex: 1;
+    padding-right:40px;
+}
+
+.footerMainWrapper > ul > li > div.footerMainCell > p{
+    font-weight: 600;
+    font-size: 16px;
+    padding-bottom:10px;
+    border-bottom:2px solid #fff
+}
+
+.footerMainCell ul li{
+    margin-top:30px;
+    cursor: pointer;
+    color: #6d6e71;
+    transition: all 200ms ease;
+}
+
+.footerMainCell ul li:hover {
+    color:#fff
+}
+
+.footerBottomWrapper:after{
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.footerBottomWrapper{
+    margin-top:100px;
+}
+
+.footerBottomWrapper .footerBottomLeft{
+    float: left;
+}
+
+.footerBottomWrapper .footerBottomRight{
+    float: right;
+}
+.footerBottomWrapper .footerBottomRight span{
+    display: inline-block;
+    margin-left: 30px;
+    color: #6d6e71;
+    transition: all 200ms ease;
+    cursor: pointer;
+}
+
+.footerBottomWrapper .footerBottomRight span:hover{
+    color:#fff
+}

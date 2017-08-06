@@ -8,6 +8,7 @@ import Header from '../components/Header'
 import MoreInfo from '../components/MoreInfo'
 import ThreeLevelBtn from '../components/ThreeLevelBtn'
 import AdverCell from '../components/AdverCell'
+import Footer from '../components/Footer'
 
 
 let cx = cs.bind(styles)
@@ -282,6 +283,7 @@ export default class Home extends Component {
                         <div className={cx('bottomBtnLine', 'bottomBtnRightLine')}></div>
                     </div>
                 </div>
+                <Footer />
             </div>
         )
     }
