@@ -9,51 +9,54 @@ import MoreInfo from '../components/MoreInfo'
 
 let cx = cs.bind(styles)
 
-export default class AdverCell extends Component{
-    constructor(props){
+export default class AdverCell extends Component {
+    constructor(props) {
         super(props)
         this.renderImageOnRight = this.renderImageOnRight.bind(this)
         this.renderImageOnLeft = this.renderImageOnLeft.bind(this)
     }
 
-    renderImageOnRight(){
-        return(
+    renderImageOnRight() {
+        let rightStyle = {position: 'relative', textAlign: 'right', marginRight: '40px', left: 0}
+        return (
             <div className={cx('protectContainer')}>
                 <div className={cx('protectLeft')}>
                     <div className={cx('protectLeftCenter')}>
-                        <h1>Protect your organization from Petya / NotPetya Ransomware outbreak</h1>
-                        <MoreInfo info="Stop Petya / NotPetya Ransomware" fontStyle={{color:'#000'}} cellStyle={{position:'relative',textAlign:'right',marginRight:'20px'}}/>
+                        <h1>{this.props.data.title}</h1>
+                        <p>{this.props.data.info}</p>
+                        <MoreInfo info={this.props.data.moreInfo} fontStyle={{color: '#000'}} cellStyle={rightStyle}/>
                     </div>
                 </div>
                 <div className={cx('protectRight')}>
-                    <img src={require('../assets/img/adver.jpg')} alt="" className={cx('protectImage')}/>
+                    <img src={this.props.data.src} alt="" className={cx('protectImage')}/>
                     <div className={cx('protectShadow')}></div>
                 </div>
             </div>
         )
     }
 
-    renderImageOnLeft(){
-        return(
+    renderImageOnLeft() {
+        let leftStyle = {position: 'relative', textAlign: 'left', left: 0, bottom: 0}
+        return (
             <div className={cx('protectContainer')}>
                 <div className={cx('protectRight')}>
-                    <img src={require('../assets/img/adver.jpg')} alt="" className={cx('protectImage')}/>
-                    <div className={cx('protectShadow')} style={{left:'-50px'}}></div>
+                    <img src={this.props.data.src} alt="" className={cx('protectImage')}/>
+                    <div className={cx('protectShadow')} style={{left: '-50px'}}></div>
                 </div>
                 <div className={cx('protectLeft')}>
                     <div className={cx('protectLeftCenter')}>
-                        <h1>Stop Malware & Non-Malware Attacks</h1>
-                        <p>Legacy and machine learning AV are not enough to stop new and evolving threats. Cb Defense’s streaming prevention stops all types of attacks by intercepting malicious activity before it causes harm.</p>
-                        <MoreInfo info="Stop Petya / NotPetya Ransomware" fontStyle={{color:'#000'}} cellStyle={{position:'relative',textAlign:'left',left:0,bottom:0}}/>
+                        <h1>{this.props.data.title}</h1>
+                        <p>{this.props.data.info}</p>
+                        <MoreInfo info={this.props.data.moreInfo} fontStyle={{color: '#000'}} cellStyle={leftStyle}/>
                     </div>
                 </div>
             </div>
         )
     }
 
-    render(){
-        return(
-            this.props.reverse ? this.renderImageOnLeft() : this.renderImageOnRight()
+    render() {
+        return (
+            this.props.data.reverse ? this.renderImageOnLeft() : this.renderImageOnRight()
         )
     }
 }

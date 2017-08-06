@@ -12,15 +12,32 @@ export default class Header extends Component {
         super(props)
         this.state = {
             flag: true,
-            scrollZero:true
+            scrollZero: true,
+            menuData: ['Why Carbon Black?', 'Company', 'Company', 'Company', 'Company']
         }
 
         this.handleScroll = this.handleScroll.bind(this)
+        this.renderMenu = this.renderMenu.bind(this)
     }
 
-    handleScroll(){
+    renderMenu() {
+        let data = this.state.menuData
+        let arr = []
+        data.map((val, index) => {
+            arr.push(
+                <li key={index}>
+                    <span className={cx('menuFontCell')}>{val}</span>
+                    <span className={cx('menuHoverCell')}/>
+                </li>
+            )
+        })
+
+        return arr
+    }
+
+    handleScroll() {
         let scroll = document.documentElement.scrollTop || document.body.scrollTop
-        scroll > 0 ? this.setState({scrollZero:false}) : this.setState({scrollZero:true})
+        scroll > 0 ? this.setState({scrollZero: false}) : this.setState({scrollZero: true})
     }
 
     componentDidMount() {
@@ -29,47 +46,28 @@ export default class Header extends Component {
     }
 
     componentWillUnmount() {
-        window.removeEventListener('scroll',this.handleScroll)
+        window.removeEventListener('scroll', this.handleScroll)
     }
 
     render() {
         return (
-            <div className={cx('container',{'containerTop':this.state.scrollZero})} >
+            <div className={cx('container', {'containerTop': this.state.scrollZero})}>
                 <div className={cx('wrapper')}>
-                    <div className={styles.logoWrapper}>
+                    <div className={cx('logoWrapper')}>
                         <img src={require('../assets/img/logo.png')} alt=""/>
                     </div>
-                    <div className={styles.menuWrapper}>
+                    <div className={cx('menuWrapper')}>
                         <ul>
+                            {this.renderMenu()}
                             <li>
-                                <span className={styles.menuFontCell}>Why Carbon Black?</span>
-                                <span className={styles.menuHoverCell}/>
+                                <img className={cx('searchImage')} src={require('../assets/img/search.png')} alt=""/>
+                                <span className={cx('menuHoverCell')}/>
                             </li>
                             <li>
-                                <span className={styles.menuFontCell}>Company</span>
-                                <span className={styles.menuHoverCell}/>
-                            </li>
-                            <li>
-                                <span className={styles.menuFontCell}>Company</span>
-                                <span className={styles.menuHoverCell}/>
-                            </li>
-                            <li>
-                                <span className={styles.menuFontCell}>Company</span>
-                                <span className={styles.menuHoverCell}/>
-                            </li>
-                            <li>
-                                <span className={styles.menuFontCell}>Company</span>
-                                <span className={styles.menuHoverCell}/>
-                            </li>
-                            <li>
-                                <img className={styles.searchImage} src={require('../assets/img/search.png')} alt=""/>
-                                <span className={styles.menuHoverCell}/>
-                            </li>
-                            <li>
-                                <div className={styles.btnWrapper}>
+                                <div className={cx('btnWrapper')}>
                                     <span>
-                                        <span className={styles.btnFontWrapper}>See It Live</span>
-                                        <span className={styles.btnHoverWrapper}/>
+                                        <span className={cx('btnFontWrapper')}>See It Live</span>
+                                        <span className={cx('btnHoverWrapper')}/>
                                     </span>
                                 </div>
                             </li>

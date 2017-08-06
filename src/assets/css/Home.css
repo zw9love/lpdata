@@ -9,6 +9,10 @@
     margin: 0 auto;
 }
 
+.wrapper > div {
+    margin: 100px 0;
+}
+
 .container .wrapper > h1 {
     color: #fefefe;
     text-align: center;
@@ -123,107 +127,228 @@
     fill: #edf0f4;
 }
 
-.defenseTitle{
-    width:100%;
+.defenseTitle {
+    width: 100%;
     max-width: 1200px;
-    margin:100px auto 0 auto
+    margin: 100px auto 0 auto
 }
 
-.defenseTitle h1{
+.defenseTitle h1 {
     font-size: 60px;
     text-align: center;
 }
 
-.defenseTitle p{
-    width:100%;
+.defenseTitle p {
+    width: 100%;
     max-width: 450px;
     /*font-size: 60px;*/
     text-align: center;
-    margin:20px auto 0 auto;
+    margin: 20px auto 0 auto;
     font-weight: 600;
-    color:#6d6e71;
+    color: #6d6e71;
     font-size: 16px;
 }
 
-.defenseInfo{
-    width:100%;
+.defenseInfo {
+    width: 100%;
     max-width: 1200px;
-    margin:80px auto 0 auto;
+    margin: 80px auto 0 auto;
     display: flex;
 }
 
-.defenseInfoLeft{
+.defenseInfoLeft {
     flex: 1;
 }
 
-.defenseInfoLeft ul li{
-    color:#247ae2;
-    font-size:18px;
+.defenseInfoLeft ul li {
+    color: #247ae2;
+    font-size: 18px;
     font-weight: 600;
-    padding:25px 20px 25px 32px;
-    border-bottom:1px solid #999;
+    padding: 25px 20px 25px 32px;
+    border-bottom: 1px solid #999;
     position: relative;
     cursor: pointer;
 }
 
-.defenseInfoLeft ul li:before{
+.defenseInfoLeft ul li:before {
     content: '+';
-    font-size:30px;
+    font-size: 30px;
     font-weight: 500;
     position: absolute;
-    left:0;
-    top:50%;
-    transform:translateY(-50%);
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
     color: #000;
 }
 
-.defenseInfoRight{
+.defenseInfoRight {
     flex: 2;
 }
 
-.defenseImageWrapper{
-    width:100%;
-    max-width:680px;
-    margin:0 auto;
-    padding:30px 50px;
+.defenseImageWrapper {
+    width: 100%;
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 30px 50px;
     background-color: #fff;
-    border-radius:15px;
+    border-radius: 15px;
 }
 
-.defenseImage{
-    width:100%;
+.defenseImage {
+    width: 100%;
 }
 
-.defenseBottomImage{
-    width:100%;
+.defenseBottomImage {
+    width: 100%;
 }
 
-.btnContainer{
-    width:100%;
-    max-width:1200px;
-    margin:50px auto;
+.btnContainer {
+    width: 100%;
+    max-width: 1200px;
+    margin: 50px auto;
     padding-bottom: 50px;
 }
 
-.btnContainer:after{
+.btnContainer:after {
     content: '';
     display: block;
     clear: both;
 }
 
-.btnContainer ul li{
-    width:33.3333%;
+.btnContainer ul li {
+    width: 33.3333%;
     float: left;
 }
 
-.btnContainer ul li h1{
-    margin-bottom:25px;
+.btnContainer ul li h1 {
+    margin-bottom: 25px;
     text-align: center;
 }
 
-.adverContainer{
-    margin-top:100px;
+.adverContainer {
+    margin-top: 100px;
 }
+
+.libContainer {
+    width: 100%;
+    background-color: #edf0f4;
+    /*padding:50px 0;*/
+    overflow: hidden;
+}
+
+.libContainer > h1 {
+    font-size: 60px;
+    text-align: center;
+    margin: 100px 0 50px 0;
+}
+
+.libWrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    position: relative;
+}
+
+.libWrapper .libLeft {
+    width: 66.6666%;
+    padding: 0 20px 0 0
+}
+
+.libHoverCell {
+    position: relative;
+}
+
+.libLeftImage {
+    width: 100%;
+    vertical-align: middle;
+}
+
+.libLeftShadow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba(66, 225, 250, .7);
+    transition: all 600ms ease;
+}
+
+.libRightTop {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 33.3333%;
+    /*height:100%;*/
+}
+
+.libRightBottom {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 33.3333%;
+    /*height:100%;*/
+}
+
+.libHoverCell:hover .libLeftShadow {
+    background-color: rgba(66, 225, 250, .0);
+}
+
+.libInfoWrapper {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color: #fff;
+    padding: 30px
+}
+
+.libInfoWrapper > p {
+    color: #247ae2;
+    padding: 20px 0;
+    font-weight: 600;
+}
+
+.libInfoWrapper > h1 {
+    line-height: 40px;
+    margin-bottom: 20px;
+}
+
+.libInfoWrapper > h2 {
+    line-height: 30px;
+    margin-bottom: 20px;
+}
+
+.libInfoLeft {
+    width: calc(100% - 100px);
+}
+
+.libInfoRight {
+    width: calc(100% - 30px);
+    padding: 0 0 20px 20px;
+}
+
+.bottomBtnWrapper {
+    margin: 80px auto;
+    max-width: 1200px;
+    position: relative;
+}
+
+.bottomBtnLine {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: calc(50% - 130px);
+    height: 1px;
+    background-color: #ccc;
+}
+
+.bottomBtnLeftLine {
+    left: 0;
+}
+
+.bottomBtnRightLine {
+    right: 0;
+}
+
 
 
 

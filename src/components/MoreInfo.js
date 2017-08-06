@@ -7,25 +7,26 @@ import cs from 'classnames/bind'
 
 let cx = cs.bind(styles)
 
-export default class MoreInfo extends Component{
-    constructor(props){
+export default class MoreInfo extends Component {
+    constructor(props) {
         super(props)
         this.state = {
-            info:'View Product'
+            info: 'View Product'
         }
     }
 
-    componentDidMount(){
+    componentDidMount() {
         // console.log(this.props.classCell)
     }
 
-    render(){
-        return(
+    render() {
+        return (
             <div className={cx('moreInfoCell')} style={this.props.cellStyle}>
                 <span style={this.props.fontStyle}>
                     {this.props.info || this.state.info}
-                    <span className={cx('bottomLine',this.props.classLine)} />
-                    <img src={require('../assets/img/arrow.svg')} alt="" className={cx('arrowImage',this.props.classArrow)}/>
+                    <span className={cx('bottomLine', this.props.classLine)}/>
+                    <img src={require('../assets/img/arrow.svg')} alt=""
+                         className={cx('arrowImage', this.props.classArrow)}/>
                 </span>
             </div>
         )
