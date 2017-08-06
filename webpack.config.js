@@ -169,7 +169,8 @@ if (process.env.NODE_ENV === 'production') {
             {
                 loader: "css-loader",
                 options: {
-                    modules: true
+                    modules: true,
+                    localIdentName:'[local]_[hash:base64:10]'
                 }
             },
             {
